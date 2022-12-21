@@ -3,7 +3,7 @@ function demo(){
 };
 
 function myDisplayer(some) {
-    document.getElementById("demo").innerHTML = some;
+    document.getElementById("demopara").innerHTML = some;
   }
   
   let myPromise = new Promise(function(myResolve, myReject) {
