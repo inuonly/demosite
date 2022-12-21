@@ -1,7 +1,9 @@
 function demo(){
     alert("hi! \n Alert script works for now!");
 };
-
+function myDisplayer(some) {
+    document.getElementById("demopara").innerHTML = some;
+}
 let myPromise = new Promise(function(myResolve, myReject) {
     let req = new XMLHttpRequest();
     req.open('GET', "index.html");
