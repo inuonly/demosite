@@ -77,7 +77,7 @@ function onGooglePayButtonClicked(){
 
     paymentDataRequest.transactionInfo = {
         totalPriceStatus: 'FINAL',
-        totalPrice: selectedItem.price,
+        totalPrice: 1,
         currencyCode: 'INR',
         countryCode: 'IN',
     };
