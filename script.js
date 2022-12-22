@@ -68,5 +68,17 @@ function createAndAddButton() {
     document.getElementById('buy-now').appendChild(googlePayButton);
 }
 
+function onGooglePayButtonClicked(){
+    const paymentDataRequest = { ...googlePayConfiguration };
+    paymentDataRequest.merchantInfo = {
+        merchantId: 'BCR2DN4TQSEIBYLW',
+        merchantName: 'K2',
+    };
+
+    paymentDataRequest.transactionInfo = {
+        
+    };
+
+}
 
 /* gpay section code ends */
