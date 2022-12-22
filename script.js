@@ -76,9 +76,26 @@ function onGooglePayButtonClicked(){
     };
 
     paymentDataRequest.transactionInfo = {
-        
+        totalPriceStatus: 'FINAL',
+        totalPrice: selectedItem.price,
+        currencyCode: 'INR',
+        countryCode: 'IN',
     };
 
+    googlePayClient.loadPaymentData(paymentDataRequest)
+    .then(paymentData => processPaymentData(paymentData))
+    .catch(error => console.error('loadPaymentData error : ', error));
+
+}
+
+function processPaymentData(paymentData){
+    fetch(ordersEndpointURL,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: paymentData
+    });
 }
 
 /* gpay section code ends */
