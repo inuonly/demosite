@@ -35,7 +35,7 @@ const tokenizationSpecification = {
 const cardPaymentMethod = {
     type: 'CARD',
     parameters: {
-        allowedCardNetworks: ['VISA','MASTERCARD'],
+        allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"],
         allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
     }
 };
@@ -47,9 +47,9 @@ const googlePayConfiguration = {
 function onGooglePayLoaded(){
     googlePayClient = new google.payments.api.PaymentsClient({
         environment: 'TEST', 
-    });
+});
 
-    googlePayClient.isReadyToPay(googlePayConfiguration)
+googlePayClient.isReadyToPay(googlePayConfiguration)
     .then(response => {
         if (response.result){
             createAndAddButton();
